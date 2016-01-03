@@ -1,1 +1,30 @@
-new.html.erb
+<section>
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="quote_single">
+            <h1>Create a new profile:</h1>
+
+            <%= form_tag '/profiles', method: :post do %>
+
+            <div>
+              <%= label_tag :name %>
+              <%= text_field_tag :name, @profile.quote %>
+            </div>
+            <div>
+              <%= label_tag : %>
+              <%= text_field_tag :, @profile.description%>
+            </div>
+            <div>
+              <%= label_tag :date %>
+              <%= text_field_tag :date, @.date %>
+            </div>
+            <div>
+              <%= label_tag :user %>
+              <%= collection_select :user, :user_id, @users, :id, :name %>
+            </div>
+            <%= submit_tag "Add " %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>

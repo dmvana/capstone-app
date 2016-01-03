@@ -1,4 +1,4 @@
 class Quote < ActiveRecord::Base
-belongs_to :profile
-has many :
+belongs_to :user
+belongs_to :group
 end
