@@ -1,4 +1,9 @@
 class QuotesController < ApplicationController
+  def index
+  @quote = Quote.all
+  end
+
+
   def new
     @quote = Quote.new
   end
@@ -6,7 +11,9 @@ class QuotesController < ApplicationController
   def create
     @quote. Quote.create(
       description: params[:description],
-      date: params[:date]
+      date: params[:date],
+      user_id: current_user.id 
+      
       )
   end
 

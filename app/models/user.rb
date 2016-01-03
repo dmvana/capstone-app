@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   has_many :quotes
   has_many :friends
   has_many :groups, through: :user_groups
+    
 end
