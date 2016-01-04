@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'profiles/:id/edit' => 'profiles#edit'
   patch 'profiles/:id' => 'profiles#update'
   delete 'profiles/:id' => 'photos#destroy'
-
+  
+  get 'quotes' => 'quotes#index'
   get 'quotes/new' => 'quotes#new'
   post 'quotes' => 'quotes#create'
 
