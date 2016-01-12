@@ -1,7 +1,10 @@
 class QuotesController < ApplicationController
   def index
-  # 
-  @quotes = current_user.quotes
+    if current_user 
+      @quotes = current_user.quotes
+    else 
+      @quotes = []
+    end
   end
 
 
