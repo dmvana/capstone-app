@@ -7,7 +7,11 @@ class QuotesController < ApplicationController
     end
   end
 
-
+  def show
+    # quote_id = params[:id]
+    # @quote = Quote.find_by(:id quote_id)
+  end
+  
   def new
     @quote = Quote.new
   end
@@ -16,7 +20,7 @@ class QuotesController < ApplicationController
     @quote. Quote.create(
       description: params[:description],
       date: params[:date],
-      user_id: current_user.id 
+      # user_id: current_user.id 
       
       )
   end

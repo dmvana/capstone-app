@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get '/' => 'quotes#index'
-  
+
   get '/profiles' => 'profiles#index'
   get '/profiles/:id' => 'profiles#show'
   get '/profiles/new' => 'profiles#new'
@@ -11,8 +11,14 @@ Rails.application.routes.draw do
   delete 'profiles/:id' => 'photos#destroy'
   
   get 'quotes' => 'quotes#index'
+  get 'quotes/:id'=> 'quotes#show'
   get 'quotes/new' => 'quotes#new'
   post 'quotes' => 'quotes#create'
+  get 'quotes/:id/edit' => 'quotes#edit'
+  patch 'quotes/:id' => 'quotes#update'
+  delete 'quotes/:id' => 'quotes#destroy'
+
+
 
   get 'groups/new' => 'groups#new'
   post 'groups' => 'groups#create'
