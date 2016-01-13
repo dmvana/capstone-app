@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   delete 'profiles/:id' => 'photos#destroy'
   
   get 'quotes' => 'quotes#index'
-  get 'quotes/:id'=> 'quotes#show'
   get 'quotes/new' => 'quotes#new'
+  get 'quotes/:id'=> 'quotes#show'
   post 'quotes' => 'quotes#create'
   get 'quotes/:id/edit' => 'quotes#edit'
   patch 'quotes/:id' => 'quotes#update'

@@ -8,21 +8,30 @@ class QuotesController < ApplicationController
   end
 
   def show
-    # quote_id = params[:id]
-    # @quote = Quote.find_by(:id quote_id)
+    @quote = Quote.find_by(id: params[:id])
   end
   
   def new
     @quote = Quote.new
+    
   end
 
   def create
     @quote. Quote.create(
       description: params[:description],
       date: params[:date],
-      # user_id: current_user.id 
+      user_id: current_user.id 
       
       )
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
 end
