@@ -1,185 +1,96 @@
 <h1> "QuoteBoard" </h1>
-<%= link_to "Create a new Quote" %>
-<% @quotes.each do |quote| %>
-  <h2><%= link_to quote.description, "/quotes/#{quote.id}" %></h2>
-  <p><%= quote.description %></p>
-<% end %>
 
-                   <div class="sub-nav">
-                        <a href="#" class="select-posts active">Posts</a>
-                        <a href="#" class="select-categories">Categories</a>
-                    </div>
+<div class="sub-nav">
+    <a href="#" class="select-posts active">Posts</a>
+    <a href="#" class="select-categories">Categories</a>
+</div>
 
-                    <div class="home-page-posts animated fadeIn ">
+<div class="home-page-posts animated fadeIn ">
+  <br>
+  <%= link_to "Create a new Quote" %>
+   <% @quotes.each do |quote| %>
+    <article class="post">
+        <div class="post-preview col-xs-10  no-gutter">
+            <h2><%= link_to quote.description, "/quotes/#{quote.id}" %></h2>
 
-                        <article class="post">
-                            <div class="post-preview col-xs-10  no-gutter">
-                                <h2><a href="post.html">A great story never told</a></h2>
+            <p> <%= "quote.location goes here" %> </p>
 
-                                <p>It was a cold December morning, as I sat out on my porch I decided today was the day. </p>
+            <p class="meta">
+                <a href="author.html">James Reddy</a> in <a href="category.html">Storytime</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> <%= quote.date %>
+            </p>
+        </div>
 
-                                <p class="meta">
-                                    <a href="author.html">James Reddy</a> in <a href="category.html">Storytime</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> 23 minute read
-                                </p>
-                            </div>
+        <div class=" col-xs-2  no-gutter">
+            <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image">
+        </div>
+    </article>
+  <% end %>
 
-                            <div class=" col-xs-2  no-gutter">
-                                <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image">
-                            </div>
-                        </article>
+</div><!-- Home page posts -->
 
-                        <article class="post">
-                            <div class="post-preview col-xs-10 no-gutter">
-                                <h2><a href="post.html">Builing, Hacking, Creating</a></h2>
-                                <p>Is it better to start from scratch or build on someone elses work. My thoughts.</p>
+<div class="home-page-categories hide animated fadeIn ">
+    <div class="category row">
+        <section>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Easy Living</h2>
+                <a href="category.html"><img src="/assets/theme/cover-2.jpg" alt="category-image"></a>
+            </div>
 
-                                <p class="meta">
-                                    <a href="author.html">Mad Hacker</a> in <a href="category.html">Easy Living</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> 9 minute read
-                                </p>
-                            </div>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Adventure</h2>
+                <a href="category.html"><img src="/assets/theme/cover-4.jpg" alt="category-image"></a>
+            </div>
 
-                            <div class=" col-xs-2 no-gutter">
-                                <img src="/assets/theme/profile-2.jpg" class="user-icon"  alt="user-image">
-                            </div>
-                        </article>
-                        <article class="post">
-                            <div class="post-preview col-xs-10 no-gutter">
-                                <h2><a href="post.html">Ten reasons why you should travel, or why the city is killing your inner creative</a></h2>
-                                <p>About time for your next adventure. </p>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Storytime</h2>
+                <a href="category.html"><img src="/assets/theme/cover-6.jpg" alt="category-image"></a>
+            </div>
 
-                                <p class="meta">
-                                    <a href="author.html">Sarah Smith</a> in <a href="category.html">Adventure</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> 5 minute read
-                                </p>
-                            </div>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Open Roads</h2>
+                 <a href="category.html"><img src="/assets/theme/cover-9.jpg" alt="category-image"></a>
+            </div>
 
-                            <div class="col-xs-2 no-gutter">
-                                <img src="/assets/theme/profile-4.jpg" class="user-icon"  alt="user-image">
-                            </div>
-                        </article>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Gaming</h2>
+                <a href="category.html"><img src="/assets/theme/cover-1.jpg" alt="category-image" ></a>
+            </div>
 
-                        <article class="post">
-                            <div class="post-preview col-xs-10 no-gutter">
-                                <h2><a href="post.html">Feature List</a></h2>
-                                <p>Wondering what is actually included? </p>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>City Life</h2>
+                 <a href="category.html"><img src="/assets/theme/cover-3.jpg" alt="category-image"></a>
+            </div>
 
-                                <p class="meta">
-                                    <a href="author.html">Jane Thompson</a> in <a href="category.html">Writer</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> 2 minute read
-                                </p>
-                            </div>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Rave Culture</h2>
+                 <a href="category.html"><img src="/assets/theme/cover-5.jpg" alt="category-image"></a>
+            </div>
 
-                            <div class=" col-xs-2 no-gutter">
-                                <img src="/assets/theme/profile-5.png" class="user-icon"  alt="user-image">
-                            </div>
-                        </article>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Photography</h2>
+                <a href="category.html"><img src="/assets/theme/cover-7.jpg" alt="category-image"></a>
+            </div>
 
-                        <article class="post">
-                            <div class="post-preview col-xs-10 no-gutter">
-                                <h2><a href="post.html">About Writer</a></h2>
-                                <p>Not another bootstrap theme </p>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Animal Kingdom</h2>
+                 <a href="category.html"><img src="/assets/theme/cover-8.jpg" alt="category-image"></a>
+            </div>
 
-                                <p class="meta">
-                                    <a href="author.html">John Smith</a> in <a href="category.html">Writer</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> 3 minute read
-                                </p>
-                            </div>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Beach</h2>
+                <a href="category.html"><img src="/assets/theme/cover-10.jpg" alt="category-image"></a>
+            </div>
 
-                            <div class=" col-xs-2 no-gutter">
-                                <img src="/assets/theme/profile-1.jpg" class="user-icon"  alt="user-image">
-                            </div>
-                        </article>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Climbing</h2>
+                 <a href="category.html"><img src="/assets/theme/cover-11.jpg" alt="category-image"></a>
+            </div>
 
-                        <article class="post">
-                            <div class="post-preview col-xs-10 no-gutter">
-                                <h2><a href="components.html">Bootstrap Components</a></h2>
-                                <p>How do some of the default bootstrap components looks</p>
+            <div class="category-preview col-xs-6 col-sm-4 ">
+                <h2>Mystery</h2>
+                 <a href="category.html"><img src="/assets/theme/cover-12.jpg" alt="category-image"></a>
+            </div>
 
-                                <p class="meta">
-                                    <a href="author.html">Jane Doe</a> in <a href="category.html">Writer</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> 2 minute read
-                                </p>
-                            </div>
-
-                            <div class=" col-xs-2 no-gutter">
-                                <img src="/assets/theme/profile-3.jpg" class="user-icon"  alt="user-image">
-                            </div>
-                        </article>
-                        <article class="post">
-                            <div class="post-preview col-xs-10 no-gutter">
-                                <h2><a href="post.html">Its not always that simple</a></h2>
-                                <p>How many times should you ask the same questions. </p>
-
-                                <p class="meta">
-                                    <a href="author.html">Tim Leen</a> in <a href="category.html">Open Roads</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> 12 minute read
-                                </p>
-                            </div>
-
-                            <div class=" col-xs-2 no-gutter">
-                                <img src="/assets/theme/profile-3.jpg" class="user-icon"  alt="user-image">
-                            </div>
-                        </article>
-                    </div><!-- Home page posts -->
-
-                    <div class="home-page-categories hide animated fadeIn ">
-                        <div class="category row">
-                            <section>
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Easy Living</h2>
-                                    <a href="category.html"><img src="/assets/theme/cover-2.jpg" alt="category-image"></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Adventure</h2>
-                                    <a href="category.html"><img src="/assets/theme/cover-4.jpg" alt="category-image"></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Storytime</h2>
-                                    <a href="category.html"><img src="/assets/theme/cover-6.jpg" alt="category-image"></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Open Roads</h2>
-                                     <a href="category.html"><img src="/assets/theme/cover-9.jpg" alt="category-image"></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Gaming</h2>
-                                    <a href="category.html"><img src="/assets/theme/cover-1.jpg" alt="category-image" ></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>City Life</h2>
-                                     <a href="category.html"><img src="/assets/theme/cover-3.jpg" alt="category-image"></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Rave Culture</h2>
-                                     <a href="category.html"><img src="/assets/theme/cover-5.jpg" alt="category-image"></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Photography</h2>
-                                    <a href="category.html"><img src="/assets/theme/cover-7.jpg" alt="category-image"></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Animal Kingdom</h2>
-                                     <a href="category.html"><img src="/assets/theme/cover-8.jpg" alt="category-image"></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Beach</h2>
-                                    <a href="category.html"><img src="/assets/theme/cover-10.jpg" alt="category-image"></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Climbing</h2>
-                                     <a href="category.html"><img src="/assets/theme/cover-11.jpg" alt="category-image"></a>
-                                </div>
-
-                                <div class="category-preview col-xs-6 col-sm-4 ">
-                                    <h2>Mystery</h2>
-                                     <a href="category.html"><img src="/assets/theme/cover-12.jpg" alt="category-image"></a>
-                                </div>
-
-                            </section>
-                        </div>
-                    </div>
+        </section>
+    </div>
+</div>

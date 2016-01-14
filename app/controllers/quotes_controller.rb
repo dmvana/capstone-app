@@ -13,7 +13,6 @@ class QuotesController < ApplicationController
   
   def new
     @quote = Quote.new
-    
   end
 
   def create
@@ -21,11 +20,12 @@ class QuotesController < ApplicationController
       description: params[:description],
       date: params[:date],
       user_id: current_user.id 
-      
-      )
+    )
+    redirect_to '/quotes'
   end
 
   def edit
+    @quote = Quote.find_by(:id params[:id])
   end
 
   def update
