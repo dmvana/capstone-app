@@ -2,11 +2,11 @@
 <%= form_tag '/quotes', method: :post do %>
   <div class="form-group">
     <%= label_tag :description %>
-    <%= text_field_tag :description, {class: "form_control", placeholder: "Enter description"} %>
+    <%= text_field_tag :description, @quote.description, {class: "form_control", placeholder: "Enter description"} %>
   </div>
   <div class="form-group">
     <%= label_tag :date %>
-    <%= text_field_tag :date, {class: "form-control", plcaeholder: "Enter date"} %>
+    <%= text_field_tag :date, @quote.date, {class: "form-control", placeholder: "Enter date"} %>
   </div>
   <div>
     <%= submit_tag 'Send' %>
