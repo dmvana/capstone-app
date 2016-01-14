@@ -21,4 +21,10 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
 
+  def delete
+    @user = User.find_by(id: params[:id])
+    @user.update(active: false)
+    redirect_to "/users/sign_in"
+  end
+
 end

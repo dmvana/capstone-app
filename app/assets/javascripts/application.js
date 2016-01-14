@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require theme/jquery.jpanelmenu.min
+//= require theme/bootstrap
+//= require theme/fastclick.min
+//= require theme/main
+//= require theme/html5shiv.min
+//= require theme/modernizr.custom.32229-2.8-respondjs-1-4-2
+//= require theme/retina.min
 //= require_tree .
