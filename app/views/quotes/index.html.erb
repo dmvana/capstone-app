@@ -1,13 +1,14 @@
-<h1> "QuoteBoard" </h1>
+
 
 <div class="sub-nav">
+    <a href="#" class="select-posts active">My Quotes</a>
     <a href="#" class="select-posts active">Other People's Quotes</a>
-    <a href="#" class="select-categories">Favorites</a>
+    <a href="#" class="select-posts active">Favorites</a>
 </div>
 
 <div class="home-page-posts animated fadeIn ">
   <br>
-  <%= link_to "Create a new Quote" %>
+  <%= link_to "Create a new Quote","/quotes/new" %>
    <% @quotes.each do |quote| %>
     <article class="post">
         <div class="post-preview col-xs-10  no-gutter">
