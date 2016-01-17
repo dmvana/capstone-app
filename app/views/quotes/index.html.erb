@@ -2,27 +2,28 @@
 
 <div class="sub-nav">
     <a href="#" class="select-posts active">My Quotes</a>
-    <a href="#" class="select-posts active">Other People's Quotes</a>
-    <a href="#" class="select-posts active">Favorites</a>
+    <a href="#" class="select-categories">Other People's Quotes</a>
+    <i class="fa fa-star"style="color: yellow;"></i><a href="#" class="select-categories2">Favorites</a>
+    
 </div>
 
 <div class="home-page-posts animated fadeIn ">
   <br>
   <%= link_to "Create a new Quote","/quotes/new" %>
-   <% @quotes.each do |quote| %>
+   <% @quotes_with_avatar.each do |hash| %>
     <article class="post">
         <div class="post-preview col-xs-10  no-gutter">
-            <h2><%= link_to quote.description, "/quotes/#{quote.id}" %></h2>
-
-            <p> <%= "quote.location goes here" %> </p>
+          <h2><%= link_to hash[:quote].description, "/quotes/#{hash[:quote].id}" %></h2>
+          <p><%= hash[:quote].location %>
 
             <p class="meta">
-                <a href="author.html">James Reddy</a> in <a href="category.html">Storytime</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> <%= quote.date %>
+                <a href="author.html">James Reddy</a> in <a href="category.html">Storytime</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> <%= hash[:quote].readable_date %>
             </p>
         </div>
 
         <div class=" col-xs-2  no-gutter">
-            <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image">
+            <%= image_tag(hash[:picture], class: "user-icon") %>
+            <!-- <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image"> -->
         </div>
     </article>
   <% end %>

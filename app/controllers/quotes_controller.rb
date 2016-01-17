@@ -5,6 +5,14 @@ class QuotesController < ApplicationController
     else 
       @quotes = []
     end
+    @quotes_with_avatar = []
+    @quotes.each do |quote|
+      picture = Faker::Avatar.image
+      @quotes_with_avatar << {
+        quote: quote,
+        picture: picture
+      }
+    end
   end
 
   def show
@@ -16,9 +24,15 @@ class QuotesController < ApplicationController
   end
 
   def create
-    quote. Quote.create(
+    date_numbers = params[:date].split ('/')
+    day = date_numbers[1].to_i
+    month = date_numbers[0].to_i
+    year = date_numbers[2].to_i
+    my_date = DateTime.new(year, month, day)
+    quote = Quote.create(
       description: params[:description],
-      date: params[:date],
+      location: params[:location],
+      date: my_date,
       user_id: current_user.id 
     )
     flash[:success] = "Quote was succesfully created!"
@@ -30,10 +44,16 @@ class QuotesController < ApplicationController
   end
 
   def update
+    date_numbers = params[:date].split ('/')
+    day = date_numbers[1].to_i
+    month = date_numbers[0].to_i
+    year = date_numbers[2].to_i
+    my_date = DateTime.new(year, month, day)
     quote = Quote.find_by(id: params[:id])
     quote.update(
       description: params[:description],
-      date: params[:date],
+      location: params[:location],
+      date: my_date,
       user_id: current_user.id
     )
     flash[:success] = "Quote was succesfully updated!"

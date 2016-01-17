@@ -1,5 +1,6 @@
-<h1>New Quote:</h1>
-<p><%= @quote.description %><p>
+<h1> Edited Quote:</h1>
+<p>What was said: <%= @quote.description %><p>
+<p>Where: <%= @quote.location %></p>
 <p>Quote made: <%= @quote.date %></p>
 <%= link_to "Edit this quote", "/quotes/#{@quote.id}/edit" %> 
 <%= link_to "Back to all quotes", "/quotes" %> 

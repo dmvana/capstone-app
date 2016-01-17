@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :friends
   has_many :groups, through: :user_groups
     
+  has_many :user_quotes
+  has_many :favorited_quotes, through: :user_quotes, source: :quote
 end
