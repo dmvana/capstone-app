@@ -1,0 +1,2 @@
+module UserQuotesHelper
+end

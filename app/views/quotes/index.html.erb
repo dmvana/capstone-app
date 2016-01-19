@@ -10,19 +10,19 @@
 <div class="home-page-posts animated fadeIn ">
   <br>
   <%= link_to "Create a new Quote","/quotes/new" %>
-   <% @quotes_with_avatar.each do |hash| %>
+   <% @quotes.each do |quote| %>
     <article class="post">
         <div class="post-preview col-xs-10  no-gutter">
-          <h2><%= link_to hash[:quote].description, "/quotes/#{hash[:quote].id}" %></h2>
-          <p><%= hash[:quote].location %>
+          <h2><%= link_to quote.description, "/quotes/#{quote.id}" %></h2>
+          <p><%= quote.location %>
 
             <p class="meta">
-                <a href="author.html">James Reddy</a> in <a href="category.html">Storytime</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> <%= hash[:quote].readable_date %>
+                <a href="author.html">James Reddy</a> in <a href="category.html">Storytime</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> <%= quote.readable_date %>
             </p>
         </div>
 
         <div class=" col-xs-2  no-gutter">
-            <%= image_tag(hash[:picture], class: "user-icon") %>
+            <%= image_tag(quote.user.avatar, class: "user-icon") %>
             <!-- <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image"> -->
         </div>
     </article>
@@ -31,68 +31,26 @@
 </div><!-- Home page posts -->
 
 <div class="home-page-categories hide animated fadeIn ">
-    <div class="category row">
-        <section>
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Easy Living</h2>
-                <a href="category.html"><img src="/assets/theme/cover-2.jpg" alt="category-image"></a>
-            </div>
+   <% @other_peoples_quotes.each do |quote| %>
+    <article class="post">
+        <div class="post-preview col-xs-10  no-gutter">
+          <h2><%= link_to quote.description, "/quotes/#{quote.id}" %></h2>
+          <p><%= quote.location %>
 
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Adventure</h2>
-                <a href="category.html"><img src="/assets/theme/cover-4.jpg" alt="category-image"></a>
-            </div>
+            <p class="meta">
+                <a href="author.html">James Reddy</a> in <a href="category.html">Storytime</a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> <%= quote.readable_date %>
+            </p>
+        </div>
 
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Storytime</h2>
-                <a href="category.html"><img src="/assets/theme/cover-6.jpg" alt="category-image"></a>
-            </div>
+        <div class=" col-xs-2  no-gutter">
+            <%= image_tag(quote.user.avatar, class: "user-icon") %>
+            <!-- <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image"> -->
+        </div>
+    </article>
+  <% end %>      
 
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Open Roads</h2>
-                 <a href="category.html"><img src="/assets/theme/cover-9.jpg" alt="category-image"></a>
-            </div>
+            
 
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Gaming</h2>
-                <a href="category.html"><img src="/assets/theme/cover-1.jpg" alt="category-image" ></a>
-            </div>
-
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>City Life</h2>
-                 <a href="category.html"><img src="/assets/theme/cover-3.jpg" alt="category-image"></a>
-            </div>
-
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Rave Culture</h2>
-                 <a href="category.html"><img src="/assets/theme/cover-5.jpg" alt="category-image"></a>
-            </div>
-
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Photography</h2>
-                <a href="category.html"><img src="/assets/theme/cover-7.jpg" alt="category-image"></a>
-            </div>
-
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Animal Kingdom</h2>
-                 <a href="category.html"><img src="/assets/theme/cover-8.jpg" alt="category-image"></a>
-            </div>
-
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Beach</h2>
-                <a href="category.html"><img src="/assets/theme/cover-10.jpg" alt="category-image"></a>
-            </div>
-
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Climbing</h2>
-                 <a href="category.html"><img src="/assets/theme/cover-11.jpg" alt="category-image"></a>
-            </div>
-
-            <div class="category-preview col-xs-6 col-sm-4 ">
-                <h2>Mystery</h2>
-                 <a href="category.html"><img src="/assets/theme/cover-12.jpg" alt="category-image"></a>
-            </div>
-
-        </section>
+        
     </div>
 </div>

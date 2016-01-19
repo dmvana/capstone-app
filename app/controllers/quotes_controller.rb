@@ -5,14 +5,21 @@ class QuotesController < ApplicationController
     else 
       @quotes = []
     end
-    @quotes_with_avatar = []
-    @quotes.each do |quote|
-      picture = Faker::Avatar.image
-      @quotes_with_avatar << {
-        quote: quote,
-        picture: picture
-      }
+    # @quotes_with_avatar = []
+    # @quotes.each do |quote|
+    #   picture = Faker::Avatar.image
+    #   @quotes_with_avatar << {
+    #     quote: quote,
+    #     picture: picture
+    #   }
+    # end
+    @other_peoples_quotes = []
+    Quote.all.each do |quote|
+      if quote.user != current_user
+        @other_peoples_quotes << quote
+      end
     end
+
   end
 
   def show

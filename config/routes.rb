@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/profiles' => 'profiles#index'
   get '/profiles/new' => 'profiles#new'
   post '/profiles' => 'profiles#create'
-   get '/profiles/:id' => 'profiles#show'
+  get '/profiles/:id' => 'profiles#show'
   get 'profiles/:id/edit' => 'profiles#edit'
   patch 'profiles/:id' => 'profiles#update'
   delete 'profiles/:id' => 'photos#destroy'
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   patch 'quotes/:id' => 'quotes#update'
   delete 'quotes/:id' => 'quotes#destroy'
 
-
+  post '/user_quotes' => 'user_quotes#create'
 
   get 'groups/new' => 'groups#new'
   post 'groups' => 'groups#create'
