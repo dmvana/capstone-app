@@ -19,7 +19,8 @@ class QuotesController < ApplicationController
         @other_peoples_quotes << quote
       end
     end
-
+    # @favorite_quotes = FavoriteQuote.where user_id: current_user.id 
+    @favorite_quotes = []
   end
 
   def show

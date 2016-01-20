@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
     
   has_many :user_quotes
   has_many :favorite_quotes
+  has_many :my_favorite_quotes, through: :favorite_quotes, source: :quote
 end

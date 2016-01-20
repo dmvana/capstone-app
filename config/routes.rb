@@ -23,6 +23,10 @@ Rails.application.routes.draw do
 
   get 'groups/new'=> 'groups#new'
   post 'groups' => 'groups#create'
-
+  
+  get '/favorites' => 'favorites#index'
+  get'/favorites/new' => 'favorites#new'
+  post '/favorites' => 'favorites#create'
+  
 
 end
