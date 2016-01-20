@@ -17,10 +17,11 @@ Rails.application.routes.draw do
   get 'quotes/:id/edit' => 'quotes#edit'
   patch 'quotes/:id' => 'quotes#update'
   delete 'quotes/:id' => 'quotes#destroy'
-
+  
+  
   post '/user_quotes' => 'user_quotes#create'
 
-  get 'groups/new' => 'groups#new'
+  get 'groups/new'=> 'groups#new'
   post 'groups' => 'groups#create'
 
 

@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
   has_many :groups, through: :user_groups
     
   has_many :user_quotes
-  has_many :favorited_quotes, through: :user_quotes, source: :quote
+  has_many :favorite_quotes
 end

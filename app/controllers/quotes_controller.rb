@@ -31,7 +31,7 @@ class QuotesController < ApplicationController
   end
 
   def create
-    date_numbers = params[:date].split ('/')
+    date_numbers = params[:date].split('/')
     day = date_numbers[1].to_i
     month = date_numbers[0].to_i
     year = date_numbers[2].to_i
