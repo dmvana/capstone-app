@@ -3,6 +3,6 @@
 <p>Where: <%= @quote.location %></p>
 <p>Quote made: <%= @quote.date %></p>
 <%= link_to "Edit this quote", "/quotes/#{@quote.id}/edit", class: "create-links" %> 
-<%= link_to "Back to all quotes", "/quotes" %> 
-<%= link_to "Delete this quote", "/quotes/#{@quote.id}", method: :delete %> 
+<%= link_to "Back to all quotes", "/quotes", class: "create-links" %> 
+<%= link_to "Delete this quote", "/quotes/#{@quote.id}", method: :delete, class: "create-links" %> 
 <%= button_to "Add to favorites", "/user_quotes" %>

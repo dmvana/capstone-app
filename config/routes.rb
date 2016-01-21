@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  namespace :v1 do
+    get '/favorite_quotes' => 'favorite_quotes#index'
+    get'/favorite_quotes/new' => 'favorite_quotes#new'
+    post '/favorite_quotes' => 'favorite_quotes#create'
+  end
   get '/' => 'quotes#index'
 
   get '/users' => 'users#index'
@@ -19,10 +24,12 @@ Rails.application.routes.draw do
 
   get 'groups/new'=> 'groups#new'
   post 'groups' => 'groups#create'
-  
+
   get '/favorites' => 'favorites#index'
   get'/favorites/new' => 'favorites#new'
   post '/favorites' => 'favorites#create'
+  
+  
   
 
 end

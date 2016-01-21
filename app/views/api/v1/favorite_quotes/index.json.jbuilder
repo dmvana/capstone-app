@@ -1,0 +1,1 @@
+json.array! @favorite_quotes, partial: 'favorite_quote', as: :favorite_quote
