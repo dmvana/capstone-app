@@ -1,0 +1,17 @@
+<h1> Community </h1>
+<div> 
+   <% @users.each do |user| %>
+    <article class="post">
+        <div class="post-preview col-xs-10  no-gutter">
+          <h2><%= link_to user.email, "/users/#{user.id}" %></h2>
+          
+
+           
+        </div>
+
+        <div class=" col-xs-2  no-gutter">
+            <%= image_tag(user.avatar, class: "user-icon") %>
+            <!-- <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image"> -->
+        </div>
+    </article>
+  <% end %>      

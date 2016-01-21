@@ -1,1 +1,19 @@
-index.html.erb
+<h1> Favorite Quotes </h1>
+<div> 
+   <% @favorite_quotes.each do |quote| %>
+    <article class="post">
+        <div class="post-preview col-xs-10  no-gutter">
+          <h2><%= link_to quote.description, "/quotes/#{quote.id}" %></h2>
+          <p><%= quote.location %>
+
+            <p class="meta">
+                <a href="author.html"> <%= quote.user.email %><!-- </a> in <a href="category.html">Storytime</a>  --><i class="link-spacer"></i> <i class="fa fa-bookmark"></i> <%= quote.readable_date %>
+            </p>
+        </div>
+
+        <div class=" col-xs-2  no-gutter">
+            <%= image_tag(quote.user.avatar, class: "user-icon") %>
+            <!-- <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image"> -->
+        </div>
+    </article>
+  <% end %>      

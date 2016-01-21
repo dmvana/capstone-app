@@ -9,8 +9,7 @@ class UsersController < ApplicationController
 
   def create
     user = user.create(
-      quote: params[:quote],
-      name: params[:name],
+      email: params[:email],
       )
     flash[:success] = "Quote was successfully created!"
     redirect_to '/profiles'

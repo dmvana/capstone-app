@@ -1,0 +1,10 @@
+<h1> Community Quotes </h1>
+<div> 
+   <% @user.quotes.each do |quote| %>
+     <%= quote.description %>
+    <article class="post">
+        <div class="post-preview col-xs-10  no-gutter">
+    </article>
+  </div>      
+            
+<% end %>
