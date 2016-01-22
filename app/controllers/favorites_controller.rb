@@ -6,7 +6,9 @@ class FavoritesController < ApplicationController
   def create
     @favorite_quotes = FavoriteQuote.create(
       description: params[:description],
-      email: params[:email]
+      email: params[:email],
+      user_id: current_user.id,
+      quote_id: params[:quote_id]
       )
   end
 end

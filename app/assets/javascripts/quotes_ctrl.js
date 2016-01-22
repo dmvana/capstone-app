@@ -10,10 +10,12 @@
       });
     };
 
-    $scope.addToFavs = function(quoteId) {
+    $scope.addToFavs = function(quote) {
+      console.log(quote);
       var favoriteQuote = {
-        user_id: $scope.UserId,
-        quote_id: quoteId
+        user_id: quote.user.id,
+        quote_id: quote.id,
+        description: quote.description
       };
       $http.post('/api/v1/favorite_quotes.json', favoriteQuote);
     };

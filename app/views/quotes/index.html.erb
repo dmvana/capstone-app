@@ -17,7 +17,7 @@
                 <!-- <a href="author.html"> --> {{ quote.email }}<!-- </a> in <a href="category.html">Storytime</a>  --><i class="link-spacer"></i> <i class="fa fa-bookmark"></i> {{ quote.readable_date }}
             </p>
             <input type="hidden" ng-model="quoteId" value="{{ quote.id }}"></input>
-<button ng-click="addToFavs(quoteId)">Add to Favorites</button>
+<button class="btn" ng-click="addToFavs(quote)"><i class="fa fa-star"></i>Add to Favorites</button>
 
 
 
