@@ -1,33 +1,25 @@
 
-<div ng-app="app">
-<div ng-controller="quotesCtrl" ng-init="setup()">
-<div ng-repeat="quote in quotesCtrl>"{{ quote }}>
 <div class="sub-nav">
     <a href="#" class="select-posts active">My Quotes</a>
     <a href="#" class="select-categories">Other People's Quotes</a> 
 </div>
-
 <div class="home-page-posts animated fadeIn ">
   <br>
   <%= link_to "Create a new Quote", "/quotes/new", class: "create-link" %>
-   <% @quotes.each do |quote| %>
-    <article class="post">
-        <div class="post-preview col-xs-10  no-gutter">
-          <h2><%= link_to quote.description, "/quotes/#{quote.id}" %></h2>
-          <p><%= quote.location %>
-
-            <p class="meta">
-                <!-- <a href="author.html"> --> <%= quote.user.email %><!-- </a> in <a href="category.html">Storytime</a>  --><i class="link-spacer"></i> <i class="fa fa-bookmark"></i> <%= quote.readable_date %>
-            </p>
-        </div>
-
-        <div class=" col-xs-2  no-gutter">
-            <%= image_tag(quote.user.avatar, class: "user-icon") %>
-            <!-- <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image"> -->
-        </div>
-    </article>
-<% end %>
 </div><!-- Home page posts -->
+<div ng-app="app">
+<div ng-controller="quotesCtrl" ng-init="setup(<%= current_user.id %>)">
+<div ng-repeat="quote in quotes">
+            <img src="{{ quote.user.avatar }}" class="user-icon" />
+<h2><a href="/quotes/{{ quote.id }}">{{ quote.description }}</a></h2>
+<p>{{ quote.location }}</p>
+<p class="meta">
+                <!-- <a href="author.html"> --> {{ quote.email }}<!-- </a> in <a href="category.html">Storytime</a>  --><i class="link-spacer"></i> <i class="fa fa-bookmark"></i> {{ quote.readable_date }}
+            </p>
+            <input type="hidden" ng-model="quoteId" value="{{ quote.id }}"></input>
+<button ng-click="addToFavs(quoteId)">Add to Favorites</button>
+
+
 
 <div class="home-page-categories hide animated fadeIn ">
    <% @other_peoples_quotes.each do |quote| %>
@@ -42,7 +34,7 @@
         </div>
 
         <div class=" col-xs-2  no-gutter">
-            <%= image_tag(quote.user.avatar, class: "user-icon") %>
+            <%# image_tag(quote.user.avatar, class: "user-icon") %>
             <!-- <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image"> -->
         </div>
     </article>

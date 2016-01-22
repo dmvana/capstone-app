@@ -9,12 +9,11 @@ class Api::V1::FavoriteQuotesController < ApplicationController
   end
 
   def create
-    @favorite_quotes = FavoriteQuote.create(
-      description: params[:description],
-      location: params[:location],
-      date: params[:date]
+    @favorite_quote = FavoriteQuote.create(
+      user_id: params[:user_id],
+      quote_id: params[:quote_id]
     )
-    render :show
+    render :index
   end
 
 end
