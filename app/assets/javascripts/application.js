@@ -10,8 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require angular
-//= require app
 //= require jquery
 //= require jquery_ujs
 //= require theme/jquery.jpanelmenu.min
@@ -21,4 +19,6 @@
 //= require theme/html5shiv.min
 //= require theme/modernizr.custom.32229-2.8-respondjs-1-4-2
 //= require theme/retina.min
+//= require angular
+//= require app
 //= require_tree .

@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
+  get 'api/v1'
+
+  get 'api/quotes'
+
   devise_for :users
-  namespace :v1 do
-    get '/favorite_quotes' => 'favorite_quotes#index'
-    get'/favorite_quotes/new' => 'favorite_quotes#new'
-    post '/favorite_quotes' => 'favorite_quotes#create'
+  
+  namespace :api do
+    namespace :v1 do
+      get '/favorite_quotes' => 'favorite_quotes#index'
+      get'/favorite_quotes/new' => 'favorite_quotes#new'
+      post '/favorite_quotes' => 'favorite_quotes#create'
+
+      get '/quotes' => 'quotes#index'
+    end
   end
+
   get '/' => 'quotes#index'
 
   get '/users' => 'users#index'

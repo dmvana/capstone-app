@@ -1,10 +1,10 @@
 
-
+<div ng-app="app">
+<div ng-controller="quotesCtrl" ng-init="setup()">
+<div ng-repeat="quote in quotesCtrl>"{{ quote }}>
 <div class="sub-nav">
     <a href="#" class="select-posts active">My Quotes</a>
-    <a href="#" class="select-categories">Other People's Quotes</a>
-    
-    
+    <a href="#" class="select-categories">Other People's Quotes</a> 
 </div>
 
 <div class="home-page-posts animated fadeIn ">
@@ -37,7 +37,7 @@
           <p><%= quote.location %>
 
             <p class="meta">
-                <a href="author.html"> <%= quote.user.email %><!-- </a> in <a href="category.html">Storytime</a>  --><i class="link-spacer"></i> <i class="fa fa-bookmark"></i> <%= quote.readable_date %>
+                <!-- <a href="author.html"> --> <%= quote.user.email %><!-- </a> in <a href="category.html">Storytime</a>  --><i class="link-spacer"></i> <i class="fa fa-bookmark"></i> <%= quote.readable_date %>
             </p>
         </div>
 
@@ -46,12 +46,7 @@
             <!-- <img src="/assets/theme/profile-1.jpg" class="user-icon" alt="user-image"> -->
         </div>
     </article>
-  <% end %>      
-
-  
-
-            
-
-        
-  </div>
+  <% end %>        
+</div>
+</div>
 </div>

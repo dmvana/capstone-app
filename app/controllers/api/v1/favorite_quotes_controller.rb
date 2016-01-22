@@ -10,9 +10,9 @@ class Api::V1::FavoriteQuotesController < ApplicationController
 
   def create
     @favorite_quotes = FavoriteQuote.create(
-    description: params[:description],
-    location: params[:location],
-    date: params[:date]
+      description: params[:description],
+      location: params[:location],
+      date: params[:date]
     )
     render :show
   end
